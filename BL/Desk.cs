@@ -1,4 +1,5 @@
-﻿
+﻿using System.Collections.Generic;
+
 
 namespace Chess_1
 {
@@ -8,7 +9,14 @@ namespace Chess_1
         private int length { get; set; }
         
         public Cell[,] Cells { get; set; }
-
+        //public Cell this[Cell] { get { return cels; } set; }
+        private List<Cell> cels { get { if (cels.Capacity == 0) { return null; } else return this.cels; } set { if (value == null) { } else cels = value; } }
+       // private List<Cell> Cel1() { return cels; }
+        public List<Cell> Cellls
+        {
+            get { return cels; }
+            
+        }
         public Desk(int Length, int Width)
         {            
             width = Width;
@@ -20,6 +28,7 @@ namespace Chess_1
             Cells = new Cell[length, width];
             Cell WhiteCell = new Cell(SetOfColors.white);
             Cell BlackCell = new Cell(SetOfColors.black);
+          //  cels = new List<Cell>(width);
             
             for (int i = 0; i < length; i++)
             {
@@ -49,6 +58,14 @@ namespace Chess_1
                     }
                 }
             }
+            
+          /*  for (int i = 0; i < width; i++)
+            {
+                if (i % 2 == 0)
+                    cels[i] = WhiteCell;
+                else
+                    cels[i] = BlackCell;
+            }*/
             
         }
     }

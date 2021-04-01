@@ -23,19 +23,27 @@ namespace Chess_1
 
         public void PrintDesk(Desk desk)
         {
-           
+            /*  for (int i = 0; i < desk.Cellls.Capacity; i++)
+              {
+                  if (desk.Cellls[i].Сolor == SetOfColors.white)
+                      Console.Write(" ");
+                  if (desk.Cellls[i].Сolor == SetOfColors.black)
+                      Console.Write("*");
+              }  */
+
+
             for (int i = 0; i <= desk.Cells.GetUpperBound(0); i++)
             {
                 for (int j = 0; j <= desk.Cells.GetUpperBound(1); j++)
-                {                                       
+                {
                     if (desk.Cells[i, j].Сolor == SetOfColors.white)
                         Console.Write(" ");
                     if (desk.Cells[i, j].Сolor == SetOfColors.black)
-                        Console.Write("*");                   
+                        Console.Write("*");
                 }
 
                 Console.WriteLine();
-            }                      
+            }
         }
     }
 }
