@@ -6,9 +6,9 @@ namespace Chess_1
     {
         private SetOfColors сolor;
 
-        public Cell(SetOfColors Сolor)
+        public Cell(SetOfColors Colour)
         { 
-            сolor = Сolor; 
+            сolor = Colour; 
         }
 
         public SetOfColors Сolor{ 

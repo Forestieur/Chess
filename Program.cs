@@ -7,12 +7,10 @@ namespace Chess_1
     {
 
         static void Main(string[] args)       
-        {
-            Console.WriteLine("Введите размер доски");
-            View view = new View();
-            Desk desk = new Desk(view.Input("Длина"), view.Input("Ширина"));
-            desk.MakeBoard();
-            view.PrintDesk(desk);       
+        {            
+            ConsoleOutput desk = new ConsoleOutput();
+            desk.StartBoard();
+
             Console.ReadKey();            
         }
     }

@@ -1,38 +1,32 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics;
+using System;
 
 
 namespace Chess_1
 {
     class Desk 
     {
-        private int width { get; set; }
-        private int length { get; set; }
-        
-        public Cell[,] Cells { get; set; }
-        //public Cell this[Cell] { get { return cels; } set; }
-        private List<Cell> cels { get { if (cels.Capacity == 0) { return null; } else return this.cels; } set { if (value == null) { } else cels = value; } }
-       // private List<Cell> Cel1() { return cels; }
-        public List<Cell> Cellls
-        {
-            get { return cels; }
-            
-        }
+        private int _width;
+        private int _length;
+              
+
         public Desk(int Length, int Width)
         {            
-            width = Width;
-            length = Length;           
+            _width = Width;
+            _length = Length;           
         }
 
-        public void MakeBoard()
+        public void MakeBoard(out Cell[,] Cells)
         {
-            Cells = new Cell[length, width];
+            Cells = new Cell[_length, _width];
             Cell WhiteCell = new Cell(SetOfColors.white);
             Cell BlackCell = new Cell(SetOfColors.black);
-          //  cels = new List<Cell>(width);
-            
-            for (int i = 0; i < length; i++)
+
+
+            for (int i = 0; i < _length; i++)
             {
-                for (int j = 0; j < width; j++)
+                for (int j = 0; j < _width; j++)
                 {
                     if (i % 2 == 0)
                     {
@@ -58,15 +52,6 @@ namespace Chess_1
                     }
                 }
             }
-            
-          /*  for (int i = 0; i < width; i++)
-            {
-                if (i % 2 == 0)
-                    cels[i] = WhiteCell;
-                else
-                    cels[i] = BlackCell;
-            }*/
-            
         }
     }
 }
